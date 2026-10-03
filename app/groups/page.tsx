@@ -20,7 +20,8 @@ export default async function GroupsPage() {
                 id,
                 name,
                 budget,
-                created_by
+                created_by,
+                join_code
             )
         `)
         .eq('user_id', userId)
@@ -60,6 +61,11 @@ export default async function GroupsPage() {
                                         ? `$${group.budget}`
                                         : 'Not set'}
                                 </span>
+
+                                <p>
+                                    Join code:{' '}
+                                    <strong>{group.join_code ?? 'Not available'}</strong>
+                                </p>
                             </li>
                         )
                     })}

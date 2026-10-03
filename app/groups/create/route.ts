@@ -57,7 +57,7 @@ export async function POST(request: Request) {
             budget,
             created_by: userId,
         })
-        .select('id')
+        .select('id, join_code')
         .single()
 
     if (groupError || !group) {
