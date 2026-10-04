@@ -64,7 +64,9 @@ export default async function GroupsPage() {
 
                                 <p>
                                     Join code:{' '}
-                                    <strong>{group.join_code ?? 'Not available'}</strong>
+                                    <strong>
+                                        {group.join_code ?? 'Not available'}
+                                    </strong>
                                 </p>
                             </li>
                         )
@@ -108,6 +110,31 @@ export default async function GroupsPage() {
 
                 <button type="submit">
                     Create Group
+                </button>
+            </form>
+
+            <hr />
+
+            <h2>Join a Group</h2>
+
+            <form action="/groups/join" method="post">
+                <div>
+                    <label htmlFor="joinCode">
+                        Join code
+                    </label>
+
+                    <input
+                        id="joinCode"
+                        name="joinCode"
+                        type="text"
+                        placeholder="A7KQ92"
+                        maxLength={6}
+                        required
+                    />
+                </div>
+
+                <button type="submit">
+                    Join Group
                 </button>
             </form>
         </main>
